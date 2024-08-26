@@ -1,28 +1,34 @@
 "use client"
-
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-import { TypeAnimation } from 'react-type-animation';
-import { Image, Link } from "@nextui-org/react";
+import { title } from "@/components/primitives";
+import { Image } from "@nextui-org/react";
+import { Spotlight } from "./ui/spotlight";
+import { FlipWords } from "./ui/flip-words";
 
 export const Hero = () => {
+  const words = ["better.", "cute ^^", "beautiful.", "modern."];
+
   return (
-    <section>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-left justify-center">
+    <section className="md:my-20">
+      <Spotlight
+        className="-top-20 left-0 md:left-60 md:-top-20"
+        fill="blue"
+      />
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 py-8 md:py-10 w-full">
+        <div className="inline-block max-w-lg text-left justify-center z-10">
           <h1 className={title()}>Meet&nbsp;</h1>
-          <h1 className={title({ color: "foreground" })}>Hanip.&nbsp;</h1>
+          <h1 className={title({ color: "violet" })}>Hanif.&nbsp;</h1>
           <br />
           <h1 className={title()}>
             I develop digital things and make it&nbsp;
           </h1>
+          {/* <h1 className={title({ color: "blue" })}>
+            make&nbsp;
+          </h1>
+          <h1 className={title()}>
+            it&nbsp;
+          </h1> */}
           <h1 className={title({ color: "blue" })}>
-            beautiful.
+            <FlipWords words={words} className="text-blue-500 dark:text-blue-500" /> <br />
           </h1>
           <div className="my-5" />
           {/* <Link
